@@ -4,16 +4,27 @@
   <title>Matrix Portal Control</title>
   <link rel="stylesheet" href="styles.css">
   <script>
+    // Replace with your Matrix Portal's IP address
+    const matrixPortalIP = "192.168.1.114";
+
+    // Function to send mode change requests to the Matrix Portal
     function setMode(mode) {
-      fetch(`http://192.168.1.114/setMode?mode=${mode}`)
-        .then(response => response.text())
-        .then(data => console.log(data))
-        .catch(error => console.error('Error:', error));
+      const url = `http://${matrixPortalIP}/setMode?mode=${mode}`;
+      fetch(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.text();
+        })
+        .then(data => console.log("Response from Matrix Portal:", data))
+        .catch(error => console.error("Error:", error));
     }
   </script>
 </head>
 <body>
-  <h1>Control Matrix Portal</h1>
+  <h1>Matrix Portal Mode Control</h1>
+  <p>Click a button to change the display mode:</p>
   <button onclick="setMode('SP500')">S&P500</button>
   <button onclick="setMode('TIME')">Time</button>
 </body>
