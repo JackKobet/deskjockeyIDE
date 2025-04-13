@@ -16,8 +16,8 @@ button:hover {
   background-color: #0056b3;
 }
 .gif-background {
-    width: 300px; /* Set the desired width */
-    height: 300px; /* Set the desired height */
+    width: 52px; /* Set the desired width */
+    height: 31px; /* Set the desired height */
     background-image: url('https://img.pokemondb.net/sprites/black-white/anim/normal/slakoth.gif');
     background-size: cover; /* Adjust to fit or scale the GIF */
     background-repeat: no-repeat; /* Prevent tiling the image */
