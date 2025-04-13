@@ -7,11 +7,10 @@
 <body>
   <h1>Control Your Matrix Portal</h1>
   <button onclick="setMode('SP500')">S&P500</button>
-  <button onclick="setMode('TEMPERATURE')">Temperature</button>
   <button onclick="setMode('TIME')">Time</button>
   <script>
     function setMode(mode) {
-      fetch(`http://<matrix-portal-ip>/setMode?mode=${mode}`)
+      fetch(`http://<192.168.1.114>/setMode?mode=${mode}`)
         .then(response => console.log(`Mode set to: ${mode}`))
         .catch(error => console.error('Error:', error));
     }
