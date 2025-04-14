@@ -2,14 +2,12 @@
 <html>
 <head>
   <title>Matrix Portal Control</title>
-  <link rel="stylesheet" href="styles.css">
+  <style> /* ... your styles ... */ </style>
   <script>
-    // Replace with your Matrix Portal's IP address
-    const matrixPortalIP = "192.168.1.114";
+    const matrixPortalIP = "192.168.1.114"; // Make sure this is correct
 
-    // Function to send mode change requests to the Matrix Portal
     function setMode(mode) {
-      const url = `http://${matrixPortalIP}/setMode?mode=${mode}`;
+      const url = `http://<span class="math-inline">\{matrixPortalIP\}/setMode?mode\=</span>{mode}`;
       fetch(url)
         .then(response => {
           if (!response.ok) {
